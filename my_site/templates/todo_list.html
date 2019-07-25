@@ -1,0 +1,55 @@
+<!DOCTYPE <!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Todo List </title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <style> 
+        h1 { 
+    text-align: center; 
+    position: relative; 
+    top: 20px; 
+    font-size: 70px; 
+    color: red; 
+    animation: 3s infinite;
+    animation-name: color_change;
+}
+@keyframes color_change { 
+    10% { 
+        color: red; 
+    }
+    20% { 
+        color: green; 
+    }
+    40% { 
+        color: yellow; 
+    }
+    80% { 
+        color: purple; 
+    }
+}
+p { 
+    text-align: center; 
+    animation: 3s infinite; 
+    animation-name: color_change; 
+}
+</style> 
+    </head>
+    <body>
+        <h1> TODO LIST </h1> 
+        <p> The current time is: {{current_time}} </p> 
+        
+        {% if profile_pic_url %}
+            <img src="{{profile_pic_url}}"> 
+        {% endif %}
+
+        {% for item in todo_list %}
+            <ul> 
+                <li> {{item}} </li> 
+            </ul> 
+        {% endfor %}
+        
+    </body>
+</html>
